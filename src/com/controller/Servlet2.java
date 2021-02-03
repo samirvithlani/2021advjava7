@@ -17,8 +17,10 @@ public class Servlet2 extends HttpServlet {
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
+	int p;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		int p=10;
 		String surname = "Thakkar";
 		String name = (String)request.getAttribute("name");
 		response.setContentType("text/html");

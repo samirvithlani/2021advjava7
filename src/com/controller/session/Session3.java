@@ -1,6 +1,8 @@
 package com.controller.session;
 
 import java.io.IOException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SesssionDemo2
+ * Servlet implementation class Session3
  */
-public class SesssionDemo2 extends HttpServlet {
+public class Session3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,10 +23,12 @@ public class SesssionDemo2 extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println("serv 2" + session.getId());
-		String name = (String) session.getAttribute("name");
-		System.out.println(name);
-		///	session.invalidate();
+
+		Random r = new Random();
+		int otp = r.nextInt(1000);
+		session.setAttribute("otp", otp);
+		session.setMaxInactiveInterval(10); /// seconds
+
 	}
 
 }

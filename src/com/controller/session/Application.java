@@ -1,16 +1,17 @@
 package com.controller.session;
 
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SesssionDemo2
+ * Servlet implementation class Application
  */
-public class SesssionDemo2 extends HttpServlet {
+public class Application extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -20,11 +21,9 @@ public class SesssionDemo2 extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
-		System.out.println("serv 2" + session.getId());
-		String name = (String) session.getAttribute("name");
-		System.out.println(name);
-		///	session.invalidate();
+		ServletContext ctx = request.getServletContext();
+		ctx.setAttribute("backup", "abcd-backup");
+
 	}
 
 }

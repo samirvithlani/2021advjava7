@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SesssionDemo2
+ * Servlet implementation class Session4
  */
-public class SesssionDemo2 extends HttpServlet {
+public class Session4 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,10 +21,17 @@ public class SesssionDemo2 extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println("serv 2" + session.getId());
-		String name = (String) session.getAttribute("name");
-		System.out.println(name);
-		///	session.invalidate();
+		int otp = 0;
+		try {
+			otp = (Integer) session.getAttribute("otp");
+			System.out.println(otp);
+		} catch (Exception e) {
+
+			System.out.println("otp is expired...");
+		}
+
+		
+
 	}
 
 }
