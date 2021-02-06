@@ -344,4 +344,24 @@
     <servlet-name>UserBeanController</servlet-name>
     <url-pattern>/UserBeanController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookController</display-name>
+    <servlet-name>BookController</servlet-name>
+    <servlet-class>com.controller.BookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookController</servlet-name>
+    <url-pattern>/BookController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookDeleteController</display-name>
+    <servlet-name>BookDeleteController</servlet-name>
+    <servlet-class>com.controller.BookDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookDeleteController</servlet-name>
+    <url-pattern>/BookDeleteController</url-pattern>
+  </servlet-mapping>
 </web-app>
